@@ -2,6 +2,7 @@
   "name": "user-map",
   "version": "0.1.0",
   "private": true,
+  "homepage": "http://birdtho.github.io/user-map",
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
@@ -19,14 +20,15 @@
     "typescript": "^3.7.5"
   },
   "devDependencies": {
-    "netlify-lambda": "^1.6.3"
+    "gh-pages": "^2.2.0"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "netlify-build": "cd lambdas && tsc"
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": "react-app"
