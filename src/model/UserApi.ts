@@ -1,4 +1,4 @@
-import Axios, { AxiosInstance, AxiosResponse } from 'axios';
+import Axios, { AxiosInstance } from 'axios';
 
 const baseURL = 'https://jsonplaceholder.typicode.com/';
 
