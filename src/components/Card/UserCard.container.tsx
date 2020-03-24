@@ -12,10 +12,18 @@ interface UserCardProps {
 
 export default class UserCard extends React.PureComponent<UserCardProps> {
   onClick = () => {
-    const geo = this.props.data.address.geo;
+    const {
+      id,
+      address: {
+        geo,
+      },
+    } = this.props.data;
     this.props.onClick({
-      lat: parseFloat(geo.lat),
-      lng: parseFloat(geo.lng),
+      geo: {
+        lat: parseFloat(geo.lat),
+        lng: parseFloat(geo.lng),
+      },
+      id,
     });
   };
 
@@ -29,7 +37,7 @@ export default class UserCard extends React.PureComponent<UserCardProps> {
     } = this.props;
 
     return (
-      <Card className={'user-card'} onClick={this.onClick}>
+      <Card className={'user-card'} onClick={this.onClick} data-index={id}>
         <table>
           <tbody>
           <tr><td colSpan={2}>{name}</td></tr>

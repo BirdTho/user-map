@@ -4,7 +4,16 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+const setupReactApp = () => {
+  ReactDOM.render(<App/>, document.getElementById('root'));
+};
+
+let setupIntervalHandle = setInterval(() => {
+  if (google?.maps.Map) {
+    clearInterval(setupIntervalHandle);
+    setupReactApp();
+  }
+}, 250);
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.

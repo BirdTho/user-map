@@ -8,7 +8,7 @@ interface MainViewProps {}
 interface MainViewState {
   userData: UserData[],
   listClicked: null | number,
-  mapHighlight: null | { lat: number, lng: number }
+  mapHighlight: null | {geo: {lat: number, lng: number}, id: number}
 }
 
 export default class MainView extends React.Component<MainViewProps, MainViewState> {
@@ -33,9 +33,9 @@ export default class MainView extends React.Component<MainViewProps, MainViewSta
   }
 
   onListClick = (data: any): void => {
-    debugger;
     this.setState({
       mapHighlight: data,
+      listClicked: data.id,
     })
   };
 

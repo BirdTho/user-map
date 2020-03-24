@@ -9,6 +9,22 @@
   margin-left: 7px;
   margin-right: 7px;
 
+  &.highlight {
+    animation-name: flash;
+    animation-duration: 2s;
+    animation-timing-function: ease;
+    animation-fill-mode: forwards;
+  }
+  @keyframes flash {
+    from {
+      background-color: blue;
+    }
+
+    to {
+      background-color: #61dafb;
+    }
+  }
+
   table {
     border-collapse: collapse;
     border: none;
